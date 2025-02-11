@@ -10,15 +10,3 @@ class Email(SQLModel, table=True):
     received_at: datetime
     user_id: int = Field(foreign_key="user.id") 
     status_id: int = Field(foreign_key="status.id")
-
-class User(SQLModel, table=True):
-    id: int = Field(default=None, primary_key=True)
-    name: str
-
-class Company(SQLModel, table=True):
-    id: int = Field(default=None, primary_key=True)
-    name: str
-
-class Status(SQLModel, table=True):
-    id: int = Field(default=None, primary_key=True)
-    description: str
